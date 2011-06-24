@@ -1,0 +1,5 @@
+Some of the steps taken to improve scalability include .. 
+1. users cache the channels of the chatrooms once they have joined them avoiding the necessity to query everytime it has to send a message.
+2. Leaving a chat room also done using the cached value of the channel. 
+3. every user is an independent goroutine
+4. Since each user is handled by an independent goroutine which are far more light weight than threads and many goroutines are multiplexed on to the same thread. If a goroutine running on a thread blocks then a new thread is launched run the waiting goroutines.
